@@ -22,6 +22,7 @@ function App() {
       <Suspense fallback={<p>Processing...</p>}>
           <Cards CardsPromise={CardsPromise}/>
       </Suspense>
+     
     </>
   )
 }
