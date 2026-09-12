@@ -34,8 +34,8 @@ export default function SingleCard({ singleCard }: SingleCardProps) {
             <p>{singleCard.rating}</p>
           </span>
         </div>
-        <div className="flex justify-center bg-black rounded-[8px] text-white py-1.5 mt-7">
-          <button>Add To Stack</button>
+        <div className="flex justify-center bg-black rounded-[8px] cursor-pointer text-white py-1.5 mt-7">
+          <button className="cursor-pointer">Add To Stack</button>
         </div>
       </div>
     </div>
