@@ -37,7 +37,7 @@ const Cards = ({ CardsPromise }: CardsProps) => {
   return (
     <div className="container mx-auto flex gap-6">
 
-      
+
       <div className="grid grid-cols-3 gap-4 flex-1">
 
         {allCards.map((singleCard) => (
@@ -64,55 +64,64 @@ const Cards = ({ CardsPromise }: CardsProps) => {
           </p>
 
 
+          {stack.length === 0 ? (
+
+            <div className="h-[80px] border border border-slate-200 rounded-xl flex items-center justify-center">
+              <p className="text-sm text-slate-300">
+                Your stack is empty.
+              </p>
+            </div>
+
+          ) :
 
 
-          <div className="space-y-2">
+            <div className="space-y-2">
 
-            {stack.map((card) => (
+              {stack.map((card) => (
 
-              <div
-                key={card.name}
-                className="flex items-center justify-between border rounded-lg p-3"
-              >
+                <div
+                  key={card.name}
+                  className="flex items-center justify-between border rounded-lg p-3"
+                >
 
-                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2">
 
-                  <img
-                    src={card.icon}
-                    alt=''
-                    className="w-7 h-7"
-                  />
+                    <img
+                      src={card.icon}
+                      alt=''
+                      className="w-7 h-7"
+                    />
 
-                  <div>
-                    <p className="text-sm font-semibold">
-                      {card.name}
-                    </p>
+                    <div>
+                      <p className="text-sm font-semibold">
+                        {card.name}
+                      </p>
 
-                    <p className="text-[10px] text-gray-400">
-                      {card.category}
-                    </p>
+                      <p className="text-[10px] text-gray-400">
+                        {card.category}
+                      </p>
+                    </div>
+
                   </div>
+
+
+
+
+                  <button
+                    onClick={() => handleRemove(card)}
+                    className="text-gray-400 text-xl cursor-pointer"
+                  >
+                    <ImCross />
+                  </button>
 
                 </div>
 
+              ))}
 
-             
-
-                <button
-                  onClick={() => handleRemove(card)}
-                  className="text-gray-400 text-xl cursor-pointer"
-                >
-                  <ImCross />
-                </button>
-
-              </div>
-
-            ))}
-
-          </div>
+            </div>}
 
 
-       
+
 
           <button
             onClick={handleRemoveAll}
