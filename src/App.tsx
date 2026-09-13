@@ -3,6 +3,7 @@ import Banner from "./Components/Banner"
 import Nav from "./Components/Nav"
 import type { Icards } from "./Type/type"
 import Cards from "./Components/Cards/Cards"
+import { Footer } from "./Components/Footer"
 
 const CardFetch = async():Promise<Icards[]>=>{
   const res = await fetch('/data.json')
@@ -22,6 +23,8 @@ function App() {
       <Suspense fallback={<p>Processing...</p>}>
           <Cards CardsPromise={CardsPromise}/>
       </Suspense>
+
+      <Footer/>
      
     </>
   )
