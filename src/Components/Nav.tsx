@@ -11,11 +11,11 @@ const Nav = () => {
 
       <div>
         <ul className='flex justify-between gap-4 font-semibold'>
-          <li><span className='text-[#DB2777] cursor-pointer'>Home</span></li>
-          <li className='text-[#475569] cursor-pointer'>Technologies</li>
-          <li className='text-[#475569] cursor-pointer'>Projects</li>
-          <li className='text-[#475569] cursor-pointer'>About</li>
-          <li className='text-[#475569] cursor-pointer'>Contact</li>
+          <li><span className='text-[#DB2777] cursor-pointer'><a href="">Home</a></span></li>
+          <li className='text-[#475569] '><a href="">Technologies</a></li>
+          <li className='text-[#475569] '><a href="">Projects</a></li>
+          <li className='text-[#475569] '><a href="">About</a></li>
+          <li className='text-[#475569] '><a href="">Contact</a></li>
         </ul>
       </div>
 

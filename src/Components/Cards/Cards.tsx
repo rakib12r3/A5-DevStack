@@ -49,10 +49,12 @@ transition: Bounce,
   };
 
   return (
-    <div className="container mx-auto flex gap-6">
+    // <div className="container mx-auto flex gap-6">
+    <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-6">
 
 
-      <div className="grid grid-cols-3 gap-4 flex-1">
+      {/* <div className="grid grid-cols-3 gap-4 flex-1"> */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
 
         {allCards.map((singleCard) => (
           <SingleCard
