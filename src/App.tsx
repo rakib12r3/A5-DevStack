@@ -20,7 +20,7 @@ function App() {
       <Nav/>
       <Banner/>
 
-      <Suspense fallback={<p>Processing...</p>}>
+      <Suspense fallback={<p className="font-bold text-3xl">Processing...</p>}>
           <Cards CardsPromise={CardsPromise}/>
       </Suspense>
 

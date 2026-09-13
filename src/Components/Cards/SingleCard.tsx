@@ -1,5 +1,5 @@
-import { CiStar } from "react-icons/ci";
 import type { Icards } from "../../Type/type";
+import { FaStar } from "react-icons/fa";
 
 export interface SingleCardProps {
   singleCard: Icards
@@ -71,7 +71,7 @@ export default function SingleCard({
           </p>
 
           <span className="flex items-center">
-            <CiStar />
+            <FaStar className="text-yellow-400"/>
             <p>{singleCard.rating}</p>
           </span>
 

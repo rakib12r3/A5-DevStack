@@ -19,11 +19,22 @@ const Cards = ({ CardsPromise }: CardsProps) => {
     );
 
     if (alreadyAdded.length > 0) {
-      alert(`${card.name} is already in your stack!`);
+    //  toast.warning(`${card.name} is already in your stack!`);
+    toast.warn(`${card.name} is already in your stack!`, {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "dark",
+transition: Bounce,
+});
       return;
     }
-   
-    setStack((prevStack) => [...prevStack, card]);
+   const newStack = [...stack, card]
+    setStack(newStack);
     toast.success('Added to Stack', {
 position: "bottom-right",
 autoClose: 5000,
@@ -42,10 +53,33 @@ transition: Bounce,
     setStack((prevStack) =>
       prevStack.filter((item) => item.name !== card.name)
     );
+    toast.info(`${card.name} removed from stack!`, {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
   };
 
   const handleRemoveAll = () => {
     setStack([]);
+    toast.info("All technologies removed from stack!", {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+    
   };
 
   return (
@@ -54,7 +88,7 @@ transition: Bounce,
 
 
       {/* <div className="grid grid-cols-3 gap-4 flex-1"> */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
+      <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
 
         {allCards.map((singleCard) => (
           <SingleCard
@@ -84,7 +118,7 @@ transition: Bounce,
           {stack.length === 0 ? (
 
             <div className="h-[80px] border border border-slate-200 rounded-xl flex items-center justify-center">
-              <p className="text-sm text-slate-300">
+              <p className="text-sm text-gray-300">
                 Your stack is empty.
               </p>
             </div>

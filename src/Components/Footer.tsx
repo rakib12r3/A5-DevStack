@@ -23,32 +23,32 @@ export const Footer = () => {
 
       <div>
         <h4 className='font-bold py-2'>PRODUCT</h4>
-        <p className='text-xs text-[#64748B] cursor-pointer' >Home</p>
-        <p className='text-xs text-[#64748B] cursor-pointer'>Technologies</p>
-        <p className='text-xs text-[#64748B] cursor-pointer'>Projects</p>
+        <p className='text-xs text-[#64748B]' ><a href="">Home</a></p>
+        <p className='text-xs text-[#64748B]'><a href="">Technologies</a></p>
+        <p className='text-xs text-[#64748B]'><a href="">Projects</a></p>
       </div>
 
 
       <div>
         <h4 className='font-bold py-2'>COMPANY</h4>
-        <p className='text-xs text-[#64748B] cursor-pointer'>About</p>
-        <p className='text-xs text-[#64748B] cursor-pointer'>Contact</p>
-        <p className='text-xs text-[#64748B] cursor-pointer'>Careers</p>
+        <p className='text-xs text-[#64748B]'><a href="">About</a></p>
+        <p className='text-xs text-[#64748B]'><a href="">Contact</a></p>
+        <p className='text-xs text-[#64748B]'><a href="">Careers</a></p>
       </div>
 
 
       <div>
         <h4 className='font-bold py-2'>LEGAL</h4>
-        <p className='text-xs text-[#64748B] cursor-pointer'>Privacy Policy</p>
-        <p className='text-xs text-[#64748B] cursor-pointer'>Terms of Service</p>
+        <p className='text-xs text-[#64748B]'><a href="">Privacy Policy</a></p>
+        <p className='text-xs text-[#64748B]'><a href="">Terms of Service</a></p>
       </div>
     </div>
       <span className='divider flex container mx-auto mt-[22px]'></span>
       <div className='flex justify-between container mx-auto my-5'>
         <p className='text-xs text-[#64748B] cursor-pointer'>© 2026 Dev Stack. All rights reserved.</p>
         <div className='flex justify-between gap-3'>
-          <p className='text-xs text-[#64748B] cursor-pointer'>Privacy</p>
-          <p className='text-xs text-[#64748B] cursor-pointer'>Privacy</p>
+          <p className='text-xs text-[#64748B]'><a href="">Privacy</a></p>
+          <p className='text-xs text-[#64748B]'><a href="">Terms</a></p>
         </div>
       </div>
     </>
