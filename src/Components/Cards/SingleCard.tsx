@@ -2,19 +2,27 @@ import { CiStar } from "react-icons/ci";
 import type { Icards } from "../../Type/type";
 
 export interface SingleCardProps {
-  singleCard: Icards;
+  singleCard: Icards
+  stack:Icards[]
 
   handleAddToStack: (card: Icards) => void;
+  
 }
 
 export default function SingleCard({
   singleCard,
   handleAddToStack,
+  stack
 }: SingleCardProps) {
+
+  const isAdded =
+  stack.filter(
+    (item) => item.name === singleCard.name
+  ).length > 0;
 
   return (
     <div>
-      <div className="p-3 rounded-2xl shadow-sm ">
+      <div className={`p-3 rounded-2xl shadow-sm ${isAdded ? "border border-green-500 shadow-sky-500":""}`}>
 
         <div className="flex justify-between">
 
@@ -73,10 +81,10 @@ export default function SingleCard({
       
 
         <button
-          onClick={() => handleAddToStack(singleCard)}
-          className="flex justify-center w-full bg-black rounded-[8px] cursor-pointer text-white py-1.5 mt-3"
+          onClick={() => handleAddToStack(singleCard)} 
+          className={`flex justify-center w-full rounded-[8px] cursor-pointer text-white py-1.5 mt-3 ${isAdded ? "bg-green-300" : "bg-black"}`}
         >
-          Add to Stack
+          {isAdded ? "✓ Added to Stack" : "Add to Stack"}
         </button>
 
       </div>

@@ -2,6 +2,7 @@ import { use, useState } from "react";
 import type { Icards } from "../../Type/type";
 import SingleCard from "./SingleCard";
 import { ImCross } from "react-icons/im";
+import { Bounce, toast } from "react-toastify";
 
 export interface CardsProps {
   CardsPromise: Promise<Icards[]>;
@@ -18,10 +19,23 @@ const Cards = ({ CardsPromise }: CardsProps) => {
     );
 
     if (alreadyAdded.length > 0) {
+      alert(`${card.name} is already in your stack!`);
       return;
     }
-
+   
     setStack((prevStack) => [...prevStack, card]);
+    toast.success('Added to Stack', {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+
   };
 
   const handleRemove = (card: Icards) => {
@@ -44,7 +58,8 @@ const Cards = ({ CardsPromise }: CardsProps) => {
           <SingleCard
             key={singleCard.name}
             singleCard={singleCard}
-            handleAddToStack={handleAddToStack}
+            handleAddToStack={handleAddToStack} 
+            stack={stack}
           />
         ))}
 
@@ -59,8 +74,8 @@ const Cards = ({ CardsPromise }: CardsProps) => {
             Your Stack
           </h2>
 
-          <p className="text-sm text-gray-400 mb-4">
-            {stack.length} Technology Selected
+          <p className="text-sm text-gray-400 mb-4">{stack.length === 0 ? 'No technology selected yet': `${stack.length} Technology Selected`}
+            
           </p>
 
 

@@ -6,16 +6,16 @@ const Nav = () => {
     <nav className="sticky top-0 z-50 bg-white">
     <div className='flex justify-between gap-6 container mx-auto items-center py-2 '>
       <div>
-        <img src={Logo} alt="" />
+        <img className='cursor-pointer' src={Logo} alt="" />
       </div>
 
       <div>
         <ul className='flex justify-between gap-4 font-semibold'>
-          <li><span className='text-[#DB2777]'>Home</span></li>
-          <li className='text-[#475569]'>Technologies</li>
-          <li className='text-[#475569]'>Projects</li>
-          <li className='text-[#475569]'>About</li>
-          <li className='text-[#475569]'>Contact</li>
+          <li><span className='text-[#DB2777] cursor-pointer'>Home</span></li>
+          <li className='text-[#475569] cursor-pointer'>Technologies</li>
+          <li className='text-[#475569] cursor-pointer'>Projects</li>
+          <li className='text-[#475569] cursor-pointer'>About</li>
+          <li className='text-[#475569] cursor-pointer'>Contact</li>
         </ul>
       </div>
 
