@@ -50,9 +50,9 @@ const Cards = ({ CardsPromise }: CardsProps) => {
   };
 
   const handleRemove = (card: Icards) => {
-    setStack((prevStack) =>
-      prevStack.filter((item) => item.name !== card.name)
-    );
+  
+    const newStack = stack.filter(item => item.name !== card.name)
+    setStack(newStack);
     toast.info(`${card.name} removed from stack!`, {
       position: "bottom-right",
       autoClose: 5000,
